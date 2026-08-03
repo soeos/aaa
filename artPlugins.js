@@ -98,10 +98,10 @@ window.artPlugins=window.artPlugins||function(t){
                 o
             }catch(t){return{}}
         }
-        // async function f(){
-        //     const e="function"==typeof unsafeWindow.locals.get?unsafeWindow.locals.get("uk"):unsafeWindow.locals.uk;
-        //     return t.uinfo&&t.uinfo.uk===e?t.uinfo:fetch("https://pan.baidu.com/rest/2.0/xpan/nas?method=uinfo").then(t=>t.json()).then(e=>0===e.errno?(t.uinfo=e,e):Promise.reject(e))
-        // }
+        async function f(){
+            const e="function"==typeof unsafeWindow.locals.get?unsafeWindow.locals.get("uk"):"1";
+            return t.uinfo&&t.uinfo.uk===e?t.uinfo:fetch("https://pan.baidu.com/rest/2.0/xpan/nas?method=uinfo").then(t=>t.json()).then(e=>0===e.errno?(t.uinfo=e,e):Promise.reject(e))
+        }
         // 赞赏功能
         function g(){
             n.cache.get("sponsor")||n.update({

@@ -1,11 +1,74 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>我说啊</title>
+<head lang="zh-cn">
+<meta charset="UTF-8">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="keywords" content="搜索,let me search that for you,让我帮你搜索一下,搜索一下,教程,LMSTFY,lmstfy,谷歌,Google,google,伸手党,搞笑">
+<meta name="description" content="let me search that for you，让我帮你搜索一下，专治伸手党">
+<title>让我帮你谷歌一下 | Let Me Google That For You</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/jquery.min.js"></script>
+<script src="js/base64.min.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/script.js"></script>
 </head>
 <body>
-	<h1>好的</h1>
+<section id="main">
+<div class="about" title="关于" onclick="showAbout()">?</div>
+<div id="msgbox" class="pop-box">
+<span class="caption">LMSTFY专治各种伸手党</span>
+<div class="thanks">
+本站Let Me Search That For You说明：
+</div>
+<br>
+<div class="thanks">
+*本站与谷歌公司没有任何联系，Google 及本站出现的谷歌 Logo 是谷歌公司的商标。
+</div>
+<br>
+<div class="thanks">
+站点左下角可以选择其他版本的LMSTFY，还有短链接服务
+</div>
+<br>
+<div class="thanks">
+如果一套搜索教程组合拳还是不起效，建议：<br>让TA看：<a href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md" target="_blank">这篇文章</a><br>或给TA：<a href="https://lmstfy.net/%E6%8F%90%E9%97%AE%E7%9A%84%E6%99%BA%E6%85%A7.pdf" target="_blank">点击这里</a><br>下载的文章PDF文件，甩给TA读
+</div>
+<div class="readit" onclick="hideAbout();">我知道了</div>
+</div>
+<div id="mask" class="mask"></div>
+<div class="container">
+<div class="title0">
+<h1 class="title">要我帮你<img src="img/google_logo.png" class="logo">一下么？</h1>
+<div class="search-box">
+<input type="text" class="search-text" id="kw">
+</div>
+<div class="search-button">
+<button class="btn" id="search">
+<span class="sicon"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></span>
+<span class="stext">Google 搜索</span>
+</button>
+<button class="btn" id="search2">&nbsp;手气不错&nbsp;</button>
+</div>
+</div>
+</div>
+</section>
+<section id="function">
+<p id="tips">输入一个问题，然后按 Google 搜索</p>
+<button id="stop">快停下！我是自己人</button>
+<div id="output">
+<textarea id="url-output" rows="3" readonly></textarea>
+<div class="tool-btns">
+<button data-clipboard-target="#url-output">复制</button>
+<button id="preview">预览</button>
+</div>
+</div>
+</section>
+<footer>
+<span><a href="https://dlj.li" target="_blank">网址缩短</a> | <a href="https://lmstfy.net/baidu/" target="_blank">百度版本</a> | <a href="https://lmstfy.net/bing/" target="_blank">必应版本</a></span>
+</footer>
+<div id="arrow"></div>
 </body>
 </html>
